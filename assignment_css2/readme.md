@@ -1,1 +1,1 @@
-blue-eyed-punishment.surge.sh
+www.blue-eyed-punishment.surge.sh

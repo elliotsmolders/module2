@@ -1,1 +1,1 @@
-scintillating-cracker.surge.sh
+www.scintillating-cracker.surge.sh
