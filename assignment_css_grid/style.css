@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 100px;
+}
+
+.figuur1,
+.figuur3 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(3, 100px);
+}
+
+.figuur2,
+.figuur4 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(3, 100px);
+}
+
+.figuur1 > div:nth-child(1) {
+  background-color: #56e39f;
+  grid-row: 1/4;
+}
+.figuur1 > div:nth-child(2) {
+  background-color: #59c9a5;
+}
+.figuur1 > div:nth-child(3) {
+  background-color: #5b6c5d;
+}
+.figuur1 > div:nth-child(4) {
+  background-color: #27476e;
+}
+
+.figuur2 > div:nth-child(1) {
+  background-color: #56e39f;
+  grid-column-start: 2;
+  grid-row: 1/4;
+}
+.figuur2 > div:nth-child(2) {
+  background-color: #c1292e;
+}
+.figuur2 > div:nth-child(3) {
+  background-color: #235789;
+}
+.figuur2 > div:nth-child(4) {
+  background-color: #f0a202;
+}
+
+.figuur3 > div:nth-child(1) {
+  background-color: #b3001b;
+  grid-row: 1/4;
+}
+.figuur3 > div:nth-child(2) {
+  background-color: #f4e04d;
+}
+.figuur3 > div:nth-child(3) {
+  background-color: #54f2f2;
+}
+.figuur3 > div:nth-child(4) {
+  background-color: #5eb1bf;
+}
+
+.figuur4 > div:nth-child(1) {
+  background-color: #ff715b;
+  grid-column-start: 2;
+  grid-row: 1/4;
+}
+.figuur4 > div:nth-child(2) {
+  background-color: #30332e;
+}
+.figuur4 > div:nth-child(3) {
+  background-color: #62bbc1;
+}
+.figuur4 > div:nth-child(4) {
+  background-color: #ec058e;
+}
+
+/*# sourceMappingURL=style.css.map */
