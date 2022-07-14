@@ -1,0 +1,30 @@
+@use "./fonts.scss";
+
+.container {
+  margin: 0 auto;
+  width: 60%;
+}
+h1 {
+  text-align: center;
+}
+p {
+  font-family: "Lora", serif;
+  padding: 2%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.clearfix {
+  p {
+    width: 45%;
+    float: left;
+    &:last-of-type {
+      float: right;
+    }
+  }
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+.container {
+  margin: 0 auto;
+  width: 60%;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-family: "Lora", serif;
+  padding: 2%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.clearfix p {
+  width: 45%;
+  float: left;
+}
+.clearfix p:last-of-type {
+  float: right;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*# sourceMappingURL=style.css.map */
