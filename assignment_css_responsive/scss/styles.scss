@@ -156,6 +156,7 @@ nav {
   }
 }
 h1 {
+  padding: 1em 0;
   font-size: 1.375em;
   text-align: center;
   color: white;
@@ -170,6 +171,7 @@ main {
 
 .articles {
   display: grid;
+  margin-top: 3em;
   grid-template-columns: 1fr 1fr; //is it possible to repeat(auto-fit, 1fr)? -> img width 100% makes column full width of screen so it will not generate more than 1 column
   gap: 20px;
   article {
@@ -192,27 +194,29 @@ main {
       font-weight: 500;
       color: #828282;
     }
-    &:first-of-type {
-      margin-left: 0.2em;
-    }
-    &:last-of-type {
-      margin-right: 0.2em;
-    }
     &:nth-of-type(n + 3) {
       display: none;
+    }
+    &:first-of-type {
+      margin-left: 1em;
+    }
+    &:nth-of-type(2) {
+      margin-right: 1em;
     }
   }
 }
 section.bottom {
   display: none;
 }
+.container.button {
+  margin: 2em auto;
+  width: 90%;
+}
 a {
   text-decoration: none;
 }
 button {
-  display: block; //how to properly make a button, without display block margin auto does not work to center horizontally,styling on a instead?
-  width: 90%;
-  margin: 2em auto 0 auto;
+  width: 100%;
   padding: 0.75em;
   background-color: #5ab059;
   color: white;
@@ -220,4 +224,164 @@ button {
   font-size: 1.5em;
   border: 0;
   border-radius: 0.25em;
+}
+@media screen and (min-width: 720px) {
+  nav {
+    justify-content: start;
+    align-items: center;
+    ul {
+      display: flex;
+      li {
+        margin: 0.6em;
+        a {
+          padding: 0.3em;
+          color: white;
+          text-transform: uppercase;
+        }
+      }
+    }
+    input {
+      display: inline-block;
+      margin: 0.6em 0.6em 0.6em auto;
+      padding: 0.5em 1em;
+      border-radius: 15px;
+      border-width: 0;
+      &:focus {
+        outline: none;
+      }
+    }
+    a.search-icon {
+      margin-right: 0.5em;
+      display: inline-block;
+      padding: 0.3em;
+      fill: white;
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+  }
+  .hamburger-icon {
+    display: none;
+  }
+  h1 {
+    display: none;
+  }
+  main {
+    margin-top: 0;
+    .hero {
+      display: inline-block;
+      width: 100%;
+      height: 25vh;
+      object-fit: cover;
+    }
+  }
+  .articles {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5em;
+    article {
+      &:nth-of-type(-n + 3) {
+        display: block;
+      }
+      &:nth-of-type(3) {
+        margin-right: 1em;
+      }
+      &:nth-of-type(2) {
+        margin-right: 0;
+      }
+    }
+  }
+  section.bottom {
+    display: block;
+    margin: 4em 2em;
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p.quote {
+        text-align: center;
+        color: #828282;
+        font-size: 2em;
+      }
+      p.author {
+        margin-top: 1em;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1em;
+      }
+    }
+    .right {
+      display: none;
+    }
+  }
+  .container.button {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .articles {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    article {
+      span {
+        color: #5ab059;
+        font-weight: 600;
+      }
+      &:nth-of-type(n) {
+        display: block;
+      }
+      &:nth-of-type(3) {
+        margin-right: 0;
+      }
+      &:last-of-type {
+        margin-right: 1em;
+      }
+    }
+  }
+  section.bottom {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    column-gap: calc(15vw + 3.5em);
+    .right {
+      display: block;
+      h5 {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        color: #5ab059;
+      }
+      .bottom {
+        display: flex;
+        .text {
+          font-weight: 600;
+          line-height: 1.2em;
+          p {
+            color: #828282;
+          }
+          a {
+            color: #6ba1cd;
+          }
+        }
+        img {
+          width: 50%;
+          margin-left: 1em;
+          transform: scaleX(-1);
+        }
+      }
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      p.quote {
+        text-align: left;
+      }
+      p.author {
+        align-self: end;
+      }
+    }
+  }
+  .container.button {
+    width: 20%;
+  }
+  button {
+    padding: 0.5em;
+  }
 }
