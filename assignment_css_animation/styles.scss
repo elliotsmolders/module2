@@ -322,6 +322,16 @@ section.exercise3 {
   text-align: center;
   font-size: 24px;
   line-height: 40px;
+  padding-bottom: 20px;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 65%,
+    65% 65%,
+    50% 80%,
+    35% 65%,
+    0 65%
+  );
 }
 .heart {
   width: 100px;
