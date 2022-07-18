@@ -1,0 +1,13 @@
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+.flex-filler {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+.flip {
+  transform: rotateY(180deg);
+}
