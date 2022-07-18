@@ -1,1 +1,1 @@
-defeated-control.surge.sh
+www.defeated-control.surge.sh
