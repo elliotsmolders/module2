@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="d-flex justify-content-end justify-content-md-start align-items-center"
+        style="background-color: #7a706f"
+      >
+        <ul class="d-none d-md-flex list-unstyled mb-0">
+          <li class="m-3">
+            <a class="text-uppercase text-decoration-none text-light"href="">home</aclass=href=>
+          </li>
+          <li class="m-3"><a class="text-uppercase text-decoration-none text-light" href="">shop</a></li>
+          <li class="m-3"><a class="text-uppercase text-decoration-none text-light" href="">specials</a></li>
+          <li class="m-3"><a class="text-uppercase text-decoration-none text-light" href="">support</a></li>
+          <li class="m-3"><a class="text-uppercase text-decoration-none text-light" href="">cycling&nbsp;club</a></li>
+        </ul>
+        <input
+          class="d-none d-md-inline-block ms-auto rounded-start rounded-end"
+          type="text"
+          name="searchbar"
+          id="searchbar"
+          placeholder="Search..."
+        />
+        <a class="d-none d-md-inline-block mx-3" href="#"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25px"
+            height="25px"
+            fill="white"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </a>
+        <a class="d-inline-block d-md-none me-3 text-end" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50px"
+            height="50px"
+            fill="white"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </a>
+      </nav>
+      <h1
+        class="d-md-none text-light text-center text-capitalize p-4"
+        style="background-color: #ab9995"
+      >
+        hill valley bikes
+      </h1>
+    </header>
+    <main>
+      <div
+        class="p-5 text-start d-none d-md-block"
+        style="
+          background-image: url('./assets/images/hero.jpg');
+          height: 200px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="text-white">
+          <h1 class="d-inline-block text-lg-center">Hill Valley <br />Bikes</h1>
+        </div>
+      </div>
+
+      <section class="articles d-flex mt-5">
+        <article class="card mx-3 flex-filler">
+          <img
+            class="card-img-top"
+            src="./assets/images/article1.jpg"
+            alt="image article 1"
+          />
+          <div class="card-body">
+            <h2 class="card-title text-center">
+              The all new<br /><span class="text-success">Lightning Bolt</span>
+            </h2>
+            <p class="card-text">
+              Our newest bike is so fast you'd swear you'd gone back in time
+            </p>
+          </div>
+        </article>
+        <article class="card mx-3 flex-filler">
+          <img
+            class="card-img-top"
+            src="./assets/images/article2.jpg"
+            alt="image article 2"
+          />
+          <div class="card-body">
+            <h2 class="card-title text-center">The Classic<br /><span class="text-success">Starter</span></h2>
+            <p class="card-text">
+              The Starter will not work when you need to reach that important
+              date on time
+            </p>
+          </div>
+        </article>
+        <article class="d-none d-md-block card mx-3 flex-filler">
+          <img
+            class="card-img-top"
+            src="./assets/images/article3.jpg"
+            alt="image article 3"
+          />
+          <div class="card-body">
+            <h2 class="card-title text-center">
+              Mover cargo with<br /><span class="text-success">The Capacitator</span>
+            </h2>
+            <p class="card-text">
+              you need to move stuff.Our carrying bike wont leave you in flux.
+            </p>
+          </div>
+        </article>
+        <article class="d-none d-lg-block card mx-3 flex-filler">
+          <img
+            class="card-img-top"
+            src="./assets/images/article4.jpg"
+            alt="image article 4"
+          />
+          <div class="card-body">
+            <h2 class="card-title text-center">
+              Great gift<br /><span class="text-success">certificates</span>
+            </h2>
+            <p class="card-text">
+              Give your loved ones the ability to move under their own power
+            </p>
+          </div>
+        </article>
+      </section>
+      <section class="d-none d-md-block my-4 d-lg-flex">
+        <div class="d-flex flex-column align-items-center flex-filler m-lg-4">
+          <h3 class="text-center w-75 text-secondary text-lg-start">
+            "Great Scott, this is a great ride. I wouldnt be without my Classic
+            Starter!"
+          </h3>
+          <p class="fw-bold ms-lg-auto me-lg-5">- Robert Z.</p>
+        </div>
+        <div class="d-none d-lg-block flex-filler m-lg-4">
+          <h5 class="text-success mb-3">From the blog: Struck by Lightning</h5>
+          <div class="d-flex">
+            <div class="flex-filler">
+              <p class="mb-0">
+                How do you improve upon a great bike series? We wanted to
+                outpace the competition, so we developed our speediest bike to
+                date.The new Lightning...
+              </p>
+              <a class="text-decoration-none"href="#">Read more</a>
+            </div>
+            <img
+              class="w-50 flip"
+              src="./assets/images/article1.jpg"
+              alt="image blog"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="row w-75 mx-auto my-3">
+        <a href="#" class="btn btn-success mx-auto col-12 col-md-6">
+          Find your perfect&nbsp;ride
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
