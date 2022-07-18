@@ -145,7 +145,7 @@ section.exercise1 h1 {
 }
 section.exercise1 .opening {
   display: flex;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
   margin-left: 100px;
   margin-right: 50px;
@@ -159,13 +159,303 @@ section.exercise1 .opening {
 section.exercise1 .opening svg {
   width: 100px;
   height: 100px;
-  transform: translate(-100px);
-  animation: slide 0.1s linear infinite;
+}
+section.exercise1 .opening svg.starting {
+  animation: slide-to-end linear 2.5s 1, dissapear linear 1;
+  animation-fill-mode: forwards;
+  animation-delay: 5s, 7.5s;
+}
+section.exercise1 .opening svg.ending {
+  opacity: 0;
+  animation: appear linear 1, slide 10s linear infinite;
+  animation-delay: 7.5s, 7.5s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes dissapear {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-to-end {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
 @keyframes slide {
-  100% {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
     transform: translateX(200px);
+  }
+}
+section.exercise2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: rgb(9, 9, 60);
+}
+section.exercise2 .clock {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(12, 12, 161);
+  border-radius: 50%;
+  position: relative;
+}
+section.exercise2 li.hour {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  text-align: center;
+  font-size: 2em;
+}
+section.exercise2 li.hour:nth-of-type(2) {
+  transform: rotate(30deg);
+}
+section.exercise2 li.hour:nth-of-type(3) {
+  transform: rotate(60deg);
+}
+section.exercise2 li.hour:nth-of-type(4) {
+  transform: rotate(90deg);
+}
+section.exercise2 li.hour:nth-of-type(5) {
+  transform: rotate(120deg);
+}
+section.exercise2 li.hour:nth-of-type(6) {
+  transform: rotate(150deg);
+}
+section.exercise2 li.hour:nth-of-type(7) {
+  transform: rotate(180deg);
+}
+section.exercise2 li.hour:nth-of-type(8) {
+  transform: rotate(210deg);
+}
+section.exercise2 li.hour:nth-of-type(9) {
+  transform: rotate(240deg);
+}
+section.exercise2 li.hour:nth-of-type(10) {
+  transform: rotate(270deg);
+}
+section.exercise2 li.hour:nth-of-type(11) {
+  transform: rotate(300deg);
+}
+section.exercise2 li.hour:nth-of-type(12) {
+  transform: rotate(330deg);
+}
+section.exercise2 li.middle {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  background-color: rgb(32, 25, 25);
+  border-radius: 50%;
+}
+section.exercise2 li.seconds {
+  position: absolute;
+  width: 4px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 2px);
+  background: linear-gradient(white 50%, transparent 50% 100%);
+  animation: rotate 60s linear infinite;
+  animation-fill-mode: forwards;
+}
+section.exercise2 li.minutes {
+  position: absolute;
+  width: 4px;
+  height: 250px;
+  top: calc(50% - 125px);
+  left: calc(50% - 2px);
+  background: linear-gradient(red 50%, transparent 50% 100%);
+  animation: rotate 3600s linear infinite;
+  animation-fill-mode: forwards;
+}
+section.exercise2 li.hours {
+  position: absolute;
+  width: 4px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 2px);
+  background: linear-gradient(green 50%, transparent 50% 100%);
+  animation: rotate 43200s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section.exercise3 {
+  background-color: black;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-bubble {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 40px);
+  visibility: hidden;
+  background-color: beige;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.heart:before, .heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 15px;
+  width: 50px;
+  height: 80px;
+  z-index: 2;
+  background-color: grey;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.heart:hover:before, .heart:hover:after {
+  background-color: red;
+}
+.heart:hover .text-bubble {
+  visibility: visible;
+  z-index: 0;
+  animation: popup cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popup {
+  to {
+    transform: translateY(-60px);
+  }
+}
+section.test {
+  width: 100%;
+  background-color: black;
+}
+
+.explosion {
+  position: relative;
+  background-color: purple;
+  height: 100px;
+  width: 100px;
+}
+.explosion .line {
+  position: absolute;
+  left: calc(50% - 1px);
+  top: calc(50% - 30px);
+  width: 2px;
+  height: 30px;
+  transform-origin: 50% 100%;
+}
+.explosion .line::before {
+  content: "";
+  position: absolute;
+  background-color: darkblue;
+  left: 0;
+  top: 100%;
+  height: 10px;
+  width: 2px;
+  animation: explosion ease-out 1s infinite;
+}
+.explosion :nth-child(1) {
+  transform: translateY(-8px);
+}
+.explosion :nth-child(2) {
+  transform: rotate(45deg) translateY(-8px);
+}
+.explosion :nth-child(3) {
+  transform: rotate(90deg) translateY(-8px);
+}
+.explosion :nth-child(4) {
+  transform: rotate(135deg) translateY(-8px);
+}
+.explosion :nth-child(5) {
+  transform: rotate(180deg) translateY(-8px);
+}
+.explosion :nth-child(6) {
+  transform: rotate(225deg) translateY(-8px);
+}
+.explosion :nth-child(7) {
+  transform: rotate(270deg) translateY(-8px);
+}
+.explosion :nth-child(8) {
+  transform: rotate(315deg) translateY(-8px);
+}
+
+.wrapper {
+  display: flex;
+}
+
+@keyframes explosion {
+  0% {
+    top: 100%;
+  }
+  10% {
+    top: 90%;
+  }
+  20% {
+    top: 80%;
+  }
+  30% {
+    top: 70%;
+  }
+  40% {
+    top: 60%;
+  }
+  50% {
+    top: 50%;
+  }
+  60% {
+    top: 40%;
+  }
+  70% {
+    top: 30%;
+  }
+  80% {
+    top: 20%;
+  }
+  90% {
+    top: 10%;
+  }
+  100% {
+    top: 0%;
   }
 }
 

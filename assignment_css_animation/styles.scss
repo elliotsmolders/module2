@@ -129,6 +129,7 @@ table {
 }
 //end reset
 
+//exercise1
 section.exercise1 {
   display: flex;
   align-items: center;
@@ -140,7 +141,7 @@ section.exercise1 {
   }
   .opening {
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
     margin-left: 100px;
     margin-right: 50px;
@@ -153,13 +154,308 @@ section.exercise1 {
     svg {
       width: 100px;
       height: 100px;
-      transform: translate(-100px);
-      animation: slide 0.1s linear infinite;
+      &.starting {
+        animation: slide-to-end linear 2.5s 1, dissapear linear 1;
+        animation-fill-mode: forwards;
+        animation-delay: 5s, 7.5s;
+      }
+      &.ending {
+        opacity: 0;
+        animation: appear linear 1, slide 10s linear infinite; //,,
+        animation-delay: 7.5s, 7.5s;
+        animation-fill-mode: forwards;
+      }
     }
   }
 }
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes dissapear {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes slide-to-end {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
 @keyframes slide {
-  100% {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
     transform: translateX(200px);
+  }
+}
+//exercise 2
+
+section.exercise2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: rgb(9, 9, 60);
+  .clock {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(12, 12, 161);
+    border-radius: 50%;
+    position: relative;
+  }
+  li.hour {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-align: center;
+    font-size: 2em;
+    &:nth-of-type(2) {
+      transform: rotate(30deg);
+    }
+    &:nth-of-type(3) {
+      transform: rotate(60deg);
+    }
+    &:nth-of-type(4) {
+      transform: rotate(90deg);
+    }
+    &:nth-of-type(5) {
+      transform: rotate(120deg);
+    }
+    &:nth-of-type(6) {
+      transform: rotate(150deg);
+    }
+    &:nth-of-type(7) {
+      transform: rotate(180deg);
+    }
+    &:nth-of-type(8) {
+      transform: rotate(210deg);
+    }
+    &:nth-of-type(9) {
+      transform: rotate(240deg);
+    }
+    &:nth-of-type(10) {
+      transform: rotate(270deg);
+    }
+    &:nth-of-type(11) {
+      transform: rotate(300deg);
+    }
+    &:nth-of-type(12) {
+      transform: rotate(330deg);
+    }
+  }
+  li.middle {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+    background-color: rgb(32, 25, 25);
+    border-radius: 50%;
+  }
+  li.seconds {
+    position: absolute;
+    width: 4px;
+    height: 300px;
+    top: calc(50% - 150px);
+    left: calc(50% - 2px);
+    background: linear-gradient(white 50%, transparent 50% 100%);
+    animation: rotate 60s linear infinite;
+    animation-fill-mode: forwards;
+  }
+  li.minutes {
+    position: absolute;
+    width: 4px;
+    height: 250px;
+    top: calc(50% - 125px);
+    left: calc(50% - 2px);
+    background: linear-gradient(red 50%, transparent 50% 100%);
+    animation: rotate 3600s linear infinite;
+    animation-fill-mode: forwards;
+  }
+  li.hours {
+    position: absolute;
+    width: 4px;
+    height: 200px;
+    top: calc(50% - 100px);
+    left: calc(50% - 2px);
+    background: linear-gradient(green 50%, transparent 50% 100%);
+    animation: rotate 43200s linear infinite;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+//exercise 3
+section.exercise3 {
+  background-color: black;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-bubble {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 40px);
+  visibility: hidden;
+  background-color: beige;
+  height: 40px;
+  width: 80px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+}
+.heart {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 15px;
+    width: 50px;
+    height: 80px;
+    z-index: 2;
+    background-color: grey;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  &::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      background-color: red;
+    }
+    .text-bubble {
+      visibility: visible;
+      z-index: 0;
+      animation: popup cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.25s 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+@keyframes popup {
+  from {
+  }
+  to {
+    transform: translateY(-60px);
+  }
+}
+
+//testing
+section.test {
+  width: 100%;
+  background-color: black;
+}
+.explosion {
+  position: relative;
+  background-color: purple;
+  height: 100px;
+  width: 100px;
+  .line {
+    position: absolute;
+    left: calc(50% - 1px);
+    top: calc(50% - 30px);
+    width: 2px;
+    height: 30px;
+    transform-origin: 50% 100%;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: darkblue;
+      left: 0;
+      top: 100%;
+      height: 10px;
+      width: 2px;
+      animation: explosion ease-out 1s infinite;
+    }
+  }
+  :nth-child(1) {
+    transform: translateY(-8px);
+  }
+  :nth-child(2) {
+    transform: rotate(45deg) translateY(-8px);
+  }
+  :nth-child(3) {
+    transform: rotate(90deg) translateY(-8px);
+  }
+  :nth-child(4) {
+    transform: rotate(135deg) translateY(-8px);
+  }
+  :nth-child(5) {
+    transform: rotate(180deg) translateY(-8px);
+  }
+  :nth-child(6) {
+    transform: rotate(225deg) translateY(-8px);
+  }
+  :nth-child(7) {
+    transform: rotate(270deg) translateY(-8px);
+  }
+  :nth-child(8) {
+    transform: rotate(315deg) translateY(-8px);
+  }
+}
+
+.wrapper {
+  display: flex;
+}
+@keyframes explosion {
+  0% {
+    top: 100%;
+  }
+  10% {
+    top: 90%;
+  }
+  20% {
+    top: 80%;
+  }
+  30% {
+    top: 70%;
+  }
+  40% {
+    top: 60%;
+  }
+  50% {
+    top: 50%;
+  }
+  60% {
+    top: 40%;
+  }
+  70% {
+    top: 30%;
+  }
+  80% {
+    top: 20%;
+  }
+  90% {
+    top: 10%;
+  }
+  100% {
+    top: 0%;
   }
 }
